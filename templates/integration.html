@@ -1,0 +1,74 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/styles/vendor.css">
+        <link rel="stylesheet" href="static/alchemy.min.css"/>
+
+    </head>
+    <body>
+        <div class="alchemy" id="alchemy"></div>
+        <script type="text/javascript" src="static/scripts/vendor.js">
+        <script type="text/javascript" src="static/alchemy.min.js"></script>
+        <script type="text/javascript" src="static/alchemy.js"></script>
+
+
+       <script  type="text/javascript">
+            var config = {
+            dataSource: "static/data/integration.json",
+            cluster: true,
+            //clusterControl: true,
+            clusterKey: "system",
+            clusterColours: ["#DD79FF", "#FFFC00", "#00FF30", "#5168FF", "#00C0FF",
+                "#FF004B", "#00CDCD", "#f83f00", "#f800df", "#ff8d8f",
+                "#ffcd00", "#184fff", "#ff7e00"],
+
+            forceLocked: false,
+            nodeMouseOver: 'environment',
+            nodeCaption: "caption",
+            edgeCaption: "comment",
+            nodeCaptionsOnByDefault: true,
+
+            directedEdges:true,
+            nodeTypes: {"system":
+                    [
+                     "PAS",
+                     "DocMgmnt",
+                     "Billing",
+                     "Claims",
+                     "Client",
+                     "UserMgmnt",
+                     "Ratabase",
+                     "ESP",
+                     "other"
+                    ]
+            },
+            edgeTypes: {"comment":
+                    [
+                     "CONNECTS_TO"
+                    ]
+            },
+            initialScale: 0.7,
+            initialTranslate: [250,150],
+            showControlDash: true,
+
+            showStats: true,
+            nodeStats: true,
+
+            showFilters: true,
+            nodeFilters: true,
+
+            captionToggle: true,
+            edgesToggle: true,
+            nodesToggle: true,
+            toggleRootNotes: false,
+            search: true,
+            //showEditor: true,
+            zoomControls: true
+          };
+
+          alchemy = new Alchemy(config)
+        </script>
+    </body>
+{% endblock %}

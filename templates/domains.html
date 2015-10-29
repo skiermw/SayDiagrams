@@ -1,0 +1,50 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+    <head>
+        <link rel="stylesheet" href="http://cdn.graphalchemist.com/alchemy.0.4.1.min.css"/>
+    </head>
+    <body>
+    <div class="alchemy" id="alchemy"></div>
+
+    <script type="text/javascript" src="http://cdn.graphalchemist.com/alchemy.0.4.1.min.js"></script>
+
+
+   <script  type="text/javascript">
+        var config = {
+
+        dataSource: 'static/data/domains.json',
+
+        forceLocked: false,
+        nodeMouseOver: 'environment',
+        nodeCaption: "caption",
+        edgeCaption: "comment",
+        nodeCaptionsOnByDefault: true,
+
+        //directedEdges:true,
+
+
+        initialScale: 1,
+        initialTranslate: [250,150],
+		//showControlDash: true,
+
+		//showStats: true,
+		//nodeStats: true,
+
+		//showFilters: true,
+		//nodeFilters: true,
+
+		//captionToggle: true,
+		//edgesToggle: true,
+		//nodesToggle: true,
+		//toggleRootNotes: false,
+		//search: true,
+        //showEditor: true,
+		zoomControls: true
+      };
+
+      alchemy = new Alchemy(config)
+    </script>
+    </body>
+{% endblock %}
